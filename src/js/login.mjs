@@ -5,8 +5,6 @@ import {
   loginSubmit,
 } from "./utils/domElements.mjs";
 
-console.log(loginEmail.value);
-
 async function logIn() {
   try {
     const response = await fetch(`${baseURL}/auth/login`, {
@@ -15,8 +13,8 @@ async function logIn() {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        email: loginEmail.value,
-        password: loginPassword.value,
+        email: __USERNAME__,
+        password: __PASSWORD__,
       }),
     });
 
